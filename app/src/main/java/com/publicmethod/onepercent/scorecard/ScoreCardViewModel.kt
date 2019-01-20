@@ -1,8 +1,14 @@
-package com.publicmethod.onepercent
+package com.publicmethod.onepercent.scorecard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.publicmethod.onepercent.concurrency.IOScope
+import com.publicmethod.onepercent.concurrency.WorkerScope
+import com.publicmethod.onepercent.mvi.Action
+import com.publicmethod.onepercent.mvi.ActionResult
+import com.publicmethod.onepercent.mvi.StateViewModel
+import com.publicmethod.onepercent.mvi.ViewCommand
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.actor
@@ -10,11 +16,13 @@ import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 class ScoreCardViewModel(
-    private val workerScope: WorkerScope = object : WorkerScope {
+    private val workerScope: WorkerScope = object :
+        WorkerScope {
         override val coroutineContext: CoroutineContext =
             Dispatchers.Default
     },
-    ioScope: IOScope = object : IOScope {
+    ioScope: IOScope = object :
+        IOScope {
         override val coroutineContext: CoroutineContext =
             Dispatchers.IO
     }

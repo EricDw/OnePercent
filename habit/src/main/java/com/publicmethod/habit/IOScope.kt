@@ -1,7 +1,5 @@
-package com.publicmethod.onepercent
+package com.publicmethod.habit
 
 import kotlinx.coroutines.CoroutineScope
-
-interface WorkerScope : CoroutineScope
 
 interface IOScope : CoroutineScope

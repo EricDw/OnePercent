@@ -1,4 +1,4 @@
-package com.publicmethod.onepercent
+package com.publicmethod.onepercent.mvi
 
 import androidx.lifecycle.LiveData
 

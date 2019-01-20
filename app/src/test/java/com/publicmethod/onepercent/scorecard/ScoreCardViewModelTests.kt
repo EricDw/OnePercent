@@ -1,6 +1,8 @@
-package com.publicmethod.onepercent
+package com.publicmethod.onepercent.scorecard
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.publicmethod.onepercent.concurrency.TestingScope
+import com.publicmethod.onepercent.mvi.StateViewModel
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
